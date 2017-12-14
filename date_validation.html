@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$( "#depart" ).datepicker();
+			$( "#arrival" ).datepicker();
+			$('#check').click(function(){
+				var firstname = $('#firstname').val();
+				var lastname = $('#lastname').val();
+				if(firstname.length < 1 || lastname.length < 1){
+					if($('#alert').length === 0){
+						$('#check').append("<h4 id='alert'>Please enter valid name!</h4>");
+					}
+				}
+				else if($('#alert').hide());
+				
+				return false;
+			})
+
+
+		});
+	</script>
+	<style type="text/css">
+
+		label{
+			display: block;
+			margin-bottom: 15px;
+		}
+		#alert{
+			color: red;
+		}
+		
+	</style>
+
+	<title>Date Validation</title>
+	<div id="header">
+		<h2>Welcome to the Dojo Trip Planner!</h2>
+		<h3>Please select dates for availability:</h3>
+	</div>
+	<div id="main-content">
+		<p>Departure: <input type="text" id="depart"></p>
+		<p>Return: <input type="text" id="arrival"></p>
+		<form>
+			<label>
+				First Name:<input id="firstname" type="text" name="firstname">
+			</label>
+			<label>
+				Last Name:<input id="lastname" type="text" name="lastname">
+			</label>
+			<label id="check">
+				<input type="submit" value="Click here to check availability">
+			</label>
+		</form>
+		
+	</div>
+</head>
+<body>
+
+
+</body>
+</html>
